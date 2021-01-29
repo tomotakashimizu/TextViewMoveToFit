@@ -24,26 +24,31 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMl-HS-YgN">
-                                <rect key="frame" x="154" y="164" width="106" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="何かしらのパーツ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ll-b4-HiE">
+                                <rect key="frame" x="137.5" y="157" width="139" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="5fI-St-zNz"/>
-                                    <constraint firstAttribute="width" constant="106" id="AAb-MT-U9b"/>
+                                    <constraint firstAttribute="height" constant="21" id="KfX-IO-4y4"/>
+                                    <constraint firstAttribute="width" constant="139" id="fCe-Td-bov"/>
                                 </constraints>
-                                <state key="normal" title="Show keyboard"/>
-                            </button>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="yMl-HS-YgN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2Bh-Ts-4AY"/>
-                            <constraint firstItem="yMl-HS-YgN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="120" id="fba-sA-fHb"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1tp-ZF-ew9" secondAttribute="bottom" constant="16" id="ioA-7O-DFf"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1tp-ZF-ew9" secondAttribute="trailing" constant="20" id="t8S-ux-p5b"/>
-                            <constraint firstItem="1tp-ZF-ew9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="tBE-ov-6L3"/>
-                            <constraint firstItem="1tp-ZF-ew9" firstAttribute="top" secondItem="yMl-HS-YgN" secondAttribute="bottom" constant="167" id="tRh-9w-2a9"/>
+                            <constraint firstItem="2ll-b4-HiE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="113" id="5ee-3M-3SY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1tp-ZF-ew9" secondAttribute="bottom" constant="16" id="6HV-Wj-T78"/>
+                            <constraint firstItem="1tp-ZF-ew9" firstAttribute="top" secondItem="2ll-b4-HiE" secondAttribute="bottom" constant="183" id="KGK-vZ-zZZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1tp-ZF-ew9" secondAttribute="trailing" constant="20" id="U0e-rd-Khc"/>
+                            <constraint firstItem="1tp-ZF-ew9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Z91-VS-QLS"/>
+                            <constraint firstItem="2ll-b4-HiE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iiK-CN-iFM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="moveToFitTextView" destination="1tp-ZF-ew9" id="Dgs-4y-dfR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
