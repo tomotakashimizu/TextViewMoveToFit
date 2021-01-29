@@ -1,0 +1,2 @@
+# TextViewMoveToFit
+keyboard出現時にtextViewの長さを調整するサンプルアプリ
