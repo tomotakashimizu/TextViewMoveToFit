@@ -11,6 +11,8 @@ class ViewController: UIViewController {
     
     @IBOutlet var moveToFitTextView: UITextView!
     
+    @IBOutlet weak var topLayoutConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,9 +65,13 @@ extension ViewController: UITextViewDelegate {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
                 self.view.frame.origin.y -= keyboardSize.height
+                
+                self.topLayoutConstraint.constant = keyboardSize.height + 50
             } else {
                 let suggestionHeight = self.view.frame.origin.y + keyboardSize.height
                 self.view.frame.origin.y -= suggestionHeight
+                
+                self.topLayoutConstraint.constant = keyboardSize.height + 50
             }
         }
     }
@@ -74,24 +80,7 @@ extension ViewController: UITextViewDelegate {
     @objc func keyboardWillHide() {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
+            self.topLayoutConstraint.constant = 317
         }
     }
-    
-    
-    // テキストの初期設定を変更したい時に使う、UITextViewDelegateのオプションの関数(文字制限を設けたい場合など)
-    //    func textViewDidChange(_ textView: UITextView) {
-    //        confirmContent()
-    //    }
-    
-    // textViewとimageViewの内容の有無を確認する関数
-    //    func confirmContent() {
-    //        // どちらにも何かしらの値がある時
-    //        if postTextView.text.count > 0 && postImageView.image != placeholderImage {
-    //            // "シェアする"ボタンが押せる
-    //            postButton.isEnabled = true
-    //        } else {// どちらか、または、両方とも何も情報がなかった場合
-    //            // "シェアする"ボタンが押せない状態になる
-    //            postButton.isEnabled = false
-    //        }
-    //    }
 }
