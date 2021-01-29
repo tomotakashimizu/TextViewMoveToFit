@@ -66,11 +66,13 @@ extension ViewController: UITextViewDelegate {
             if self.view.frame.origin.y == 0 {
                 self.view.frame.origin.y -= keyboardSize.height
                 
+                // AutoLayoutによりtextViewの長さを調整
                 self.topLayoutConstraint.constant = keyboardSize.height + 50
             } else {
                 let suggestionHeight = self.view.frame.origin.y + keyboardSize.height
                 self.view.frame.origin.y -= suggestionHeight
                 
+                // AutoLayoutによりtextViewの長さを調整
                 self.topLayoutConstraint.constant = keyboardSize.height + 50
             }
         }
@@ -79,6 +81,7 @@ extension ViewController: UITextViewDelegate {
     // キーボードが消えたときに、画面を戻す
     @objc func keyboardWillHide() {
         if self.view.frame.origin.y != 0 {
+            // それぞれ初期値に戻す
             self.view.frame.origin.y = 0
             self.topLayoutConstraint.constant = 317
         }
